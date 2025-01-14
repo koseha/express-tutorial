@@ -93,4 +93,15 @@ router.patch("/:id", validatePost, async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    await postService.deletePostById(id);
+    res.status(200).send("게시물 삭제 성공");
+  } catch (err) {
+    console.log(`Error API in DELETE /posts/:id | message::${err.message}`);
+    res.status(500).send("에러");
+  }
+});
+
 export default router;

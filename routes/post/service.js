@@ -30,9 +30,14 @@ const fetchPostById = async (id) => {
   return await Post.findById(id);
 };
 
+const deletePostById = async (id) => {
+  return await Post.findByIdAndDelete(id);
+};
+
 const PostService = {
   addPost,
   fetchPosts,
   fetchPostById,
+  deletePostById,
 };
 export default PostService;
