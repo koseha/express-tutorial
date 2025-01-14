@@ -9,3 +9,6 @@ Content-Type: application/json
 
 ###
 GET http://localhost:8000/posts?limit=a
+
+###
+GET http://localhost:8000/posts/6785f901403a9f1cfb14b5ba

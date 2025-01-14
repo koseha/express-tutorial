@@ -26,8 +26,13 @@ const fetchPosts = async ({ limit }) => {
   return await Post.find().limit(limit);
 };
 
+const fetchPostById = async (id) => {
+  return await Post.findById(id);
+};
+
 const PostService = {
   addPost,
   fetchPosts,
+  fetchPostById,
 };
 export default PostService;

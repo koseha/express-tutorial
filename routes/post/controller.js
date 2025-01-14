@@ -55,4 +55,15 @@ router.get("/", validateGetPosts, async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const post = await postService.fetchPostById(id);
+    res.status(200).send(post);
+  } catch (err) {
+    console.log(`Error API in GET /posts/:id | message::${err.message}`);
+    res.status(500).send("에러");
+  }
+});
+
 export default router;
