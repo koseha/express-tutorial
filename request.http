@@ -12,3 +12,13 @@ GET http://localhost:8000/posts?limit=a
 
 ###
 GET http://localhost:8000/posts/6785f901403a9f1cfb14b5ba
+
+###
+PATCH http://localhost:8000/posts/6785f901403a9f1cfb14b5ba
+Content-Type: application/json
+
+{
+  "title": "update01 title",
+  "content": "update content",
+  "author":"seha"
+}

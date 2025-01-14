@@ -66,4 +66,31 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.patch("/:id", validatePost, async (req, res) => {
+  try {
+    const id = req.params.id;
+    const { title, content, author } = req.body;
+
+    const post = await postService.fetchPostById(id);
+
+    if (post?.author !== author) {
+      return res.status(400).send({
+        error: "author cannot be modified.",
+      });
+    }
+
+    if (post) {
+      Object.keys(req.body).forEach((key) => {
+        post[key] = req.body[key];
+      });
+      post.save();
+    }
+
+    res.status(200).send(post);
+  } catch (err) {
+    console.log(`Error API in PATCH /posts/:id | message::${err.message}`);
+    res.status(500).send("에러");
+  }
+});
+
 export default router;
