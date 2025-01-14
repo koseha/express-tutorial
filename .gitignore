@@ -1,0 +1,57 @@
+# Node.js 관련
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 환경 변수
+.env
+.env.local
+.env.*.local
+
+# IDE/편집기 관련
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 운영 체제 관련
+.DS_Store
+Thumbs.db
+
+# 로그 파일
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# 빌드 결과물
+dist/
+build/
+
+# 테스트 관련
+coverage/
+*.lcov
+
+# 임시 파일
+*.tmp
+*.temp
+*.bak
+*.orig
+*.patch
+
+# 데이터베이스 관련
+*.mongodb
+*.sqlite
+*.db
+dump/
+
+# 패키지 관리자 파일
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
