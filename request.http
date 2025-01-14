@@ -1,8 +1,11 @@
-POST http://localhost:8000/post
+POST http://localhost:8000/posts
 Content-Type: application/json
 
 {
-  "title": "title01",
+  "title": "title08",
   "content": "content",
-  "author": "seha"
+  "author":"seha"
 }
+
+###
+GET http://localhost:8000/posts?limit=a

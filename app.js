@@ -1,9 +1,19 @@
 import express from "express";
 import router from "./routes/index.js";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
 app.use(express.json());
+
+const DATABASE_URL = process.env.DB_URL;
+mongoose
+  .connect(DATABASE_URL)
+  .then(() => console.log("몽고디비 연결 성공^^"))
+  .catch((err) => console.log(err));
 
 // 포트 설정
 const PORT = 8000;
